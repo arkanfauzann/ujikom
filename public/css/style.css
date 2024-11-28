@@ -1,0 +1,61 @@
+/* Mengatur overlay gelap pada swiper */
+.swiper-slide::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.7); /* Ubah nilai alpha untuk mengatur kegelapan (0-1) */
+    z-index: 1;
+}
+
+/* Mencegah scroll horizontal */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Memastikan konten tidak melebihi lebar layar */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 100%;
+    overflow: hidden;
+}
+
+/* Mengatur responsive container */
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+/* Memastikan gambar tidak menyebabkan overflow */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Mengatur z-index untuk konten di atas swiper */
+.hero-content {
+    position: relative;
+    z-index: 2;
+} 
